@@ -1,0 +1,15 @@
+- name: variables
+  hosts: localhost
+  vars_files:
+  - vars.yaml
+  vars_prompt:
+  - name: username
+    prompt: please enter username
+    private: true
+  vars:
+    course: "ansible"
+    trainer: "siva"
+  -tasks:
+    name: variables
+    ansible.builtin.debug:
+     msg: "Hi {{trainer}}"
